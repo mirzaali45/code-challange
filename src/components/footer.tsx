@@ -45,7 +45,7 @@ export default function Footer({ slug }: { slug?: string }) {
         {/* Social Links */}
         <div data-aos="fade-left" className="flex flex-col items-center md:items-end">
           <h4 className="text-lg font-semibold mb-4">Share with friends</h4>
-          <div className="flex space-x-6">
+          <div className="flex space-x-6 justify-center md:justify-end">
             {share.map((item, idx) => (
               <Link
                 key={idx}
