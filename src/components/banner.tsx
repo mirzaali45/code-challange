@@ -138,7 +138,7 @@ export default function Banner() {
 
                 {/* Gambar Utama */}
                 <Image
-                  src="/download.jpg"
+                  src="/TypesBread.jpg"
                   alt="Basket of Bread"
                   width={400}
                   height={400}
