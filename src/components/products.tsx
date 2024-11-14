@@ -41,7 +41,7 @@ const ProductsPage = () => {
 
   return (
     <section className="py-16 px-3 bg-gradient-to-b from-gray-100 to-gray-200 min-h-screen flex items-center justify-center">
-      <div className="container mx-auto text-center">
+      <div className="container  mx-auto text-center">
         <h1 className="text-5xl font-bold text-center text-gray-800 mb-10">
           Our Products
         </h1>

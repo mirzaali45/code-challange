@@ -3,6 +3,7 @@
 import { getProduct } from "@/lib/product";
 import { IProductFields } from "@/types/product";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default async function ProductContentFull() {
@@ -10,10 +11,14 @@ export default async function ProductContentFull() {
 
   return (
     <section className="py-10 px-6 bg-gradient-to-b from-gray-50 to-gray-200 min-h-screen">
+      <Link href={"/products"} className="text-gray-600 mb-4 hover:text-purple-600">
+        ← Back to Products
+      </Link >
       <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
         All Products
       </h1>
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
         {products.map((item, index) => (
           <div
             key={index}
