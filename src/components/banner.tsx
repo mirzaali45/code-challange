@@ -22,29 +22,35 @@ export default function Banner() {
   return (
     <div className="max-w-full mx-auto overflow-hidden">
       <Swiper
-        navigation={true}
+        navigation
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         modules={[Navigation, Autoplay]}
         className="mySwiper"
         speed={800}
-        loop={true}
+        loop
+        aria-label="Image carousel for banners"
       >
         {/* Slide 1 */}
         <SwiperSlide>
           <div className={`relative w-full ${slideHeight}`}>
             <Image
               src="/Background_Banner.png"
-              alt="Banner Background Image"
+              alt="Welcome to Our Bakery"
               fill
               className="object-cover"
               priority
+              sizes="100vw"
             />
             <section
               className="absolute inset-0 flex items-center justify-center"
               data-aos="fade-up"
+              aria-labelledby="slide1-title"
             >
-              <div className="container mx-auto text-center bg-white/70 backdrop-blur-md p-6 sm:p-10 rounded-xl shadow-xl max-w-xl border">
-                <h1 className="text-3xl sm:text-5xl font-extrabold text-gray-900 mb-4">
+              <div className="container mx-auto text-center bg-white/80 backdrop-blur-md p-6 sm:p-10 rounded-xl shadow-xl max-w-xl border">
+                <h1
+                  id="slide1-title"
+                  className="text-3xl sm:text-5xl font-extrabold text-gray-900 mb-4"
+                >
                   Welcome to{" "}
                   <span className="underline decoration-purple-500">
                     Our Bakery
@@ -58,8 +64,9 @@ export default function Banner() {
                   care.
                 </p>
                 <Link
-                  href={`/products`}
+                  href="/products"
                   className="bg-purple-600 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full font-semibold shadow-md hover:bg-purple-700 transition-transform transform hover:scale-105"
+                  aria-label="Explore our bakery menu"
                 >
                   Explore Menu
                 </Link>
@@ -73,17 +80,22 @@ export default function Banner() {
           <div className={`relative w-full ${slideHeight}`}>
             <Image
               src="/background.jpg"
-              alt="Banner Background Image"
+              alt="Frozen-To-Thaw Banana Pudding"
               fill
               className="object-cover"
               priority
+              sizes="100vw"
             />
             <div
               className="absolute inset-0 flex items-center justify-center"
               data-aos="fade-up"
+              aria-labelledby="slide2-title"
             >
-              <div className="bg-black/50 backdrop-blur-md p-6 sm:p-10 rounded-xl shadow-xl max-w-xl text-center text-white">
-                <h1 className="text-2xl sm:text-4xl font-bold mb-3">
+              <div className="bg-black/70 backdrop-blur-md p-6 sm:p-10 rounded-xl shadow-xl max-w-xl text-center text-white">
+                <h1
+                  id="slide2-title"
+                  className="text-2xl sm:text-4xl font-bold mb-3"
+                >
                   New! Frozen-To-Thaw Banana Pudding
                 </h1>
                 <p className="text-sm sm:text-base mb-4">
@@ -91,8 +103,9 @@ export default function Banner() {
                   made with real bananas and whipped to perfection.
                 </p>
                 <Link
-                  href={"/products"}
+                  href="/products"
                   className="bg-green-600 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full font-semibold shadow-md hover:bg-green-500 transition-transform transform hover:scale-105"
+                  aria-label="Learn more about Banana Pudding"
                 >
                   Learn More
                 </Link>

@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css"; // Import Swiper styles
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 // Import necessary Swiper modules for navigation, pagination, and responsiveness
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -41,7 +43,7 @@ const ProductsPage = () => {
 
   return (
     <section className="py-16 px-3 bg-gradient-to-b from-gray-100 to-gray-200 min-h-screen flex items-center justify-center">
-      <div className="container  mx-auto text-center">
+      <div className="container mx-auto text-center">
         <h1 className="text-5xl font-bold text-center text-gray-800 mb-10">
           Our Products
         </h1>
@@ -55,22 +57,24 @@ const ProductsPage = () => {
             1024: { slidesPerView: 3 }, // 3 slides for screens >= 1024px
           }}
           loop={true} // Infinite loop
-          autoplay={{ delay: 2500 }} // Autoplay every 2.5 seconds
+          autoplay={{ delay: 2500, disableOnInteraction: false }} // Autoplay every 2.5 seconds
           grabCursor={true} // Enable grab cursor for better interaction
           modules={[Navigation, Pagination, Autoplay]} // Enable necessary modules
           navigation // Show next/prev buttons
           pagination={{ clickable: true }} // Enable pagination dots
+          aria-label="Product carousel"
         >
           {products.map((product, index) => (
             <SwiperSlide key={index}>
               <div
                 className="group bg-white rounded-lg shadow-lg p-4 cursor-pointer hover:shadow-xl transition-all"
                 onClick={() => handleNavigate(product.slug)}
+                aria-label={`View details about ${product.name}`}
               >
                 <div className="relative w-full h-40 mb-4">
                   <Image
                     src={product.image}
-                    alt={product.name}
+                    alt={`${product.name} thumbnail`}
                     fill
                     className="object-cover rounded-md transition-transform transform group-hover:scale-105"
                   />
