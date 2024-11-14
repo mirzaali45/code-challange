@@ -57,7 +57,7 @@ const TeamsPage = () => {
   }
 
   return (
-    <section className="py-10 px-6 bg-gradient-to-b from-gray-50 to-gray-200">
+    <section className="py-10 px-6 bg-gradient-to-b from-gray-50 to-gray-200 mt-5">
       <div className="container mx-auto">
         <h1
           className="text-4xl font-extrabold text-center text-purple-700 mb-8"
