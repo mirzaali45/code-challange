@@ -74,9 +74,10 @@ const ProductsPage = () => {
                 <div className="relative w-full h-40 mb-4">
                   <Image
                     src={product.image}
-                    alt={`${product.name} thumbnail`}
+                    alt={`${product.name} thumbnail`} // Descriptive alt text for SEO
                     fill
                     className="object-cover rounded-md transition-transform transform group-hover:scale-105"
+                    loading="lazy" // Enable lazy loading for images
                   />
                 </div>
                 <h2 className="text-2xl font-semibold text-gray-800 mb-2">
